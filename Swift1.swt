@@ -1,0 +1,47 @@
+//
+//  ViewController.swift
+//  BMICalc
+//
+//  Created by Peter Sigurdson on 2020-01-26.
+//  Copyright © 2020 theprof. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var resultsLabel: UILabel!
+    
+    @IBOutlet weak var HeightTextBox: UITextField!
+    @IBOutlet weak var HeighLabel: UITextField!
+    
+    @IBOutlet weak var WeightTextBox: UITextField!
+    
+    @IBAction func CalculateButton(_ sender: UIButton) {
+        print("calculate button pressed")
+        // get the height and weight from the text boxes
+        
+        let heightInput = HeightTextBox.text!
+        let weightInput = WeightTextBox.text!
+        
+        // convert height and weight to numbers
+        let height = Double(heightInput)!
+        let weight = Double(weightInput)!
+        
+        // debug code to test!!!
+        print("Height is:  \(height)")
+        print("Weight is:  \(weight)")
+        let bmi = weight/(height*height)
+        print("your BMI is: \(bmi)")
+
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+
+
+}
+
